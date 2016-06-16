@@ -13,7 +13,7 @@ RUN apt-get update \
 && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # configure php
-RUN sed -i "/;date.timezone /c date.timezone = ${TIMEZONE}/" /etc/php5/fpm/php.ini \
+RUN sed -i "/;date.timezone /c date.timezone = ${TIMEZONE}" /etc/php5/fpm/php.ini \
 && sed -i "/^short_open_tag /c short_open_tag = On" /etc/php5/fpm/php.ini \
 && sed -i "/^listen /c listen = 0.0.0.0:9000" /etc/php5/fpm/pool.d/www.conf \ 
 && sed -i "s/;daemonize = yes/daemonize = no/g" /etc/php5/fpm/php-fpm.conf
