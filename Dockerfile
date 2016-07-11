@@ -7,7 +7,7 @@ ENV TIMEZONE Europe/Moscow
 # install required software
 RUN apt-get update \ 
 && apt-get upgrade -y \
-&& apt-get install -y --no-install-recommends ca-certificates php5-fpm php5-curl php5-redis php5-mysql php5-mcrypt php5-gearman php5-mongo php-gettext php5-readline php5-tidy \
+&& apt-get install -y --no-install-recommends ca-certificates php5-fpm php5-curl php5-redis php5-mysql php5-mcrypt php5-gearman php5-mongo php-gettext php5-readline php5-tidy  php5-intl \
 && apt-get autoclean \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
