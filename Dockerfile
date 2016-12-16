@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y wget && echo "deb http://packages.dotde
 # install required software
 RUN apt-get update \ 
 && apt-get dist-upgrade -y \
-&& apt-get install -y --no-install-recommends ca-certificates php7.0-fpm php7.0-curl php7.0-redis php7.0-mysql php7.0-sqlite3 php7.0-mongodb php7.0-readline php7.0-tidy  php7.0-intl php7.0-mbstring php7.0-bcmath \
+&& apt-get install -y --no-install-recommends ca-certificates php7.0-fpm php7.0-curl php7.0-redis php7.0-mysql php7.0-sqlite3 php7.0-mongodb php7.0-readline php7.0-tidy  php7.0-intl php7.0-mbstring php7.0-bcmath php7.0-xml \
 && apt-get autoclean \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
