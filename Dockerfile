@@ -17,9 +17,10 @@ RUN apt-get update \
 # config xdebug
 RUN echo "xdebug.remote_enable=on" >> /etc/php/7.0/mods-available/xdebug.ini \
 && echo "xdebug.remote_autostart=on" >> /etc/php/7.0/mods-available/xdebug.ini \
-&& echo "xdebug.remote_connect_back=1" >> /etc/php/7.0/mods-available/xdebug.ini \
+&& echo "xdebug.remote_connect_back=off" >> /etc/php/7.0/mods-available/xdebug.ini \
 && echo "xdebug.idekey=PHPSTORM" >> /etc/php/7.0/mods-available/xdebug.ini \
-&& echo "xdebug.default_enable=1" >> /etc/php/7.0/mods-available/xdebug.ini
+&& echo "xdebug.default_enable=1" >> /etc/php/7.0/mods-available/xdebug.ini \
+&& echo "xdebug.remote_handler=dbgp" >> /etc/php/7.0/mods-available/xdebug.ini
 
 # configure php
 RUN sed -i "/;date.timezone /c date.timezone = ${TIMEZONE}" /etc/php/7.0/fpm/php.ini \
