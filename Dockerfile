@@ -22,7 +22,11 @@ RUN echo "xdebug.remote_enable=on" >> /etc/php/7.0/mods-available/xdebug.ini \
 && echo "xdebug.default_enable=1" >> /etc/php/7.0/mods-available/xdebug.ini \
 && echo "xdebug.remote_handler=dbgp" >> /etc/php/7.0/mods-available/xdebug.ini \
 && echo "xdebug.remote_port=9000" >> /etc/php/7.0/mods-available/xdebug.ini \
-&& echo "xdebug.remote_log=/var/log/xdebug.log" >> /etc/php/7.0/mods-available/xdebug.ini
+&& echo "xdebug.remote_log=/var/log/xdebug.log" >> /etc/php/7.0/mods-available/xdebug.ini \
+&& echo "xdebug.show_local_vars=1" >> /etc/php/7.0/mods-available/xdebug.ini \
+&& echo "xdebug.collect_params = 4" >> /etc/php/7.0/mods-available/xdebug.ini \
+&& echo "xdebug.show_exception_trace=On" >> /etc/php/7.0/mods-available/xdebug.ini \
+&& echo "xdebug.profiler_enable_trigger=On" >> /etc/php/7.0/mods-available/xdebug.ini
 
 # configure php
 RUN sed -i "/;date.timezone /c date.timezone = ${TIMEZONE}" /etc/php/7.0/fpm/php.ini \
