@@ -18,7 +18,6 @@ RUN sed -i "/;date.timezone /c date.timezone = ${TIMEZONE}" $PHP_DIR/fpm/php.ini
 
 # configure app
 RUN mkdir /var/www && mkdir -p /run/php/ && chown www-data:www-data /var/www /run/php
-RUN cp $PHP_DIR/cli/conf.d/20-pinba.ini $PHP_DIR/fpm/conf.d/20-pinba.ini 
 EXPOSE 9000
 
 ENTRYPOINT ["php-fpm7.1"]
